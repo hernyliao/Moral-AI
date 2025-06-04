@@ -59,7 +59,13 @@ def save_knowledge_base(kb):
         json.dump(data, f, indent=2)
 
 def parse_question(question):
-    match = re.search(r'(killing|helping|stealing|\w+)\s+a[n]?\s+(\w+)', question.lower())
+    """Parse a moral question and return the action and entity involved."""
+    q = question.lower().strip().rstrip("?.!")
+    # Remove trailing conditional clauses starting with common keywords
+    q = re.split(r"\bif\b|\bbecause\b|\bwhen\b|\bwhile\b", q)[0]
+    match = re.search(r"(killing|helping|stealing)\s+(?:a|an|the)?\s*(\w+)", q)
+    if not match:
+        match = re.search(r"(\w+)\s+(?:a|an|the)?\s*(\w+)", q)
     if match:
         action, entity = match.group(1), match.group(2)
         return action, entity
@@ -94,11 +100,12 @@ def answer_moral_question(question):
     score, judgement, explanation = evaluate_moral_judgement(action, entity, kb)
     print(f"Judgement: {judgement}. {explanation}")
     feedback = input("Was this correct? (yes/no): ").strip().lower()
-    if feedback == "yes":
-        update_knowledge_base(action, entity, 1 if score >= 0 else 0, kb)
-        return "Moral score updated."
-    elif feedback == "no":
-        update_knowledge_base(action, entity, -1 if score <= 0 else 0, kb)
+    if feedback in {"yes", "no"}:
+        if (feedback == "yes" and judgement == "good") or (feedback == "no" and judgement == "bad"):
+            delta = 1
+        else:
+            delta = -1
+        update_knowledge_base(action, entity, delta, kb)
         return "Moral score updated."
     else:
         return "No feedback received."
