@@ -110,7 +110,10 @@ def answer_moral_question(question):
     else:
         return "No feedback received."
 
-# Example usage:
 if __name__ == "__main__":
-    question = input("Ask a moral question: ")
-    print(answer_moral_question(question))
+    while True:
+        question = input("Ask a moral question (or type 'exit' to quit): ")
+        if question.strip().lower() in {"exit", "quit"}:
+            print("Goodbye!")
+            break
+        print(answer_moral_question(question))
