@@ -1,0 +1,9 @@
+{
+  "killing|baby": -10,
+  "killing|mosquito": 10,
+  "helping|elderly": 8,
+  "stealing|money": -7,
+  "killing|snake": -2,
+  "killing|fly": -1,
+  "stealing|elderly": 0
+}
