@@ -1,19 +1,5 @@
 {
-  "killing": {
-    "baby": -10,
-    "mosquito": 11,
-    "snake": -2,
-    "fly": -1,
-    "spider": 1,
-    "babies": -1
-  },
-  "helping": {
-    "elderly": 8,
-    "stranger": 1
-  },
-  "stealing": {
-    "money": -7,
-    "elderly": 0,
-    "food": -1
+  "kill": {
+    "baby": -1
   }
 }
