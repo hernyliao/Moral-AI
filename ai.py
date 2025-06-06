@@ -1,4 +1,3 @@
-import re
 import spacy
 import random
 import json
@@ -28,9 +27,9 @@ def parse_question(question):
     question = parser(question.lower().strip().rstrip("?.!"))
 
     for word in question:
-        if word.pos_ == "VERB" and not action:
-            action = word.lemma_
-        if word.pos_ in {"NOUN", "PROPN"} and not entity:
+        if word.pos_ == "VERB":
+            action = word.lemma_  # use lemma for normalization
+        if word.pos_ in {"NOUN", "PROPN"}:
             entity = word.lemma_
     return action, entity
 

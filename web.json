@@ -1,5 +1,85 @@
 {
   "kill": {
-    "baby": -1
+    "baby": -5,
+    "child": -5,
+    "teen": -3,
+    "adult": -3,
+    "elderly": -5,
+    "animal": -3,
+    "pet": -5
+  },
+  "save": {
+    "baby": 7,
+    "child": 5,
+    "teen": 5,
+    "adult": 3,
+    "elderly": 5,
+    "animal": 3,
+    "pet": 5
+  },
+  "help": {
+    "baby": 5,
+    "child": 5,
+    "teen": 3,
+    "adult": 3,
+    "elderly": 5,
+    "animal": 3,
+    "pet": 5,
+    "good": 0
+  },
+  "ignore": {
+    "baby": -5,
+    "child": -5,
+    "teen": -3,
+    "adult": -3,
+    "elderly": -5,
+    "animal": -3,
+    "pet": -5
+  },
+  "protect": {
+    "baby": 6,
+    "child": 5,
+    "teen": 3,
+    "adult": 3,
+    "elderly": 5,
+    "animal": 3,
+    "pet": 5,
+    "friend": 0
+  },
+  "harm": {
+    "baby": -5,
+    "child": -5,
+    "teen": -3,
+    "adult": -3,
+    "elderly": -5,
+    "animal": -3,
+    "pet": -5
+  },
+  "rescue": {
+    "baby": 7,
+    "child": 5,
+    "teen": 5,
+    "adult": 3,
+    "elderly": 5,
+    "animal": 3,
+    "pet": 5
+  },
+  "abandon": {
+    "baby": -5,
+    "child": -5,
+    "teen": -3,
+    "adult": -3,
+    "elderly": -5,
+    "animal": -3,
+    "pet": -5
+  },
+  "feed": {
+    "family": 0
+  },
+  "donate": {
+    "charity": 0
+  },
+  "cheat": {
+    "test": 0
   }
 }
